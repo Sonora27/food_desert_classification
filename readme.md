@@ -2,6 +2,8 @@
 
 Jose Ramirez
 
+Data Sources: Sources: [USDA,](https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data/) [CENSUS](https://data.census.gov/cedsci/)
+
 ## Social Case
 
 The United States of America leads the world in both obesity and diabetes rates. Many Americans struggle with these conditions as a result of not having access to healthy food.
@@ -13,8 +15,7 @@ This would be an important model because the USDA only releases a list of food d
 * pngs -- folder that contains visualizations that were vital to my analysis
 * 01_DataCleaning -- preprocessing data
 * 02_EDA_FeatureEngineering -- exploratory data analysis and feature engineering
-* 03_Modeling -- contains the different models run on the dataset
-* 04_PostModelingAnalysis -- contains analysis of modeling results
+* 03_Modeling -- contains the different models run on the dataset as well as post modeling analysis
 * README.md
 * presentation.pdf -- contains pdf version of project presentation
 
@@ -49,27 +50,43 @@ To deal with class imbalance, TomekLinks was used. Undersampling was a good choi
 
 ### Decision Tree
 
-The Decision Tree model ended up with a recall score of .75 and an F1 score of .68.
+My Decision Tree model ended up with a recall score of .75 and an F1 score of .68.
 
 ### Random Forest
 
-The Random Forest model ended up with a recall score of .77 and an F1 score of .70.
+My Random Forest model ended up with a recall score of .77 and an F1 score of .70.
 
 ### XG BOOST
 
-For my XG Boost model, I used a combination sampling technique called SMOTEENN. This technique uses SMOTE to oversample the minority class, but then it uses a K Nearest Neighbots of 3 to undersample the majority class. This helps prevent the overfitting that usually accompanies the SMOTE technique.
+For the XG Boost model, a combination sampling technique called SMOTEENN was utilized. This technique uses SMOTE to oversample the minority class, but then it uses a K Nearest Neighbots of 3 to undersample the majority class. This helps prevent the overfitting that usually accompanies the SMOTE technique.
 
 Using XG BOOST with SMOTEENN, a recall of .79 was achieved as well as an F1 Score of .67. This was used as the final model for analysis.
 
+<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/XGB_SMOTEENN_CM.png">
+
 ## Conclusions
 
-	<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/FDR%20by%20VA%20in%20Urban%20Environment.png">
+<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/feature_importance.png">
+
+* From this graph it can be see that the most important feature of the model was vehicle access. The United States federal government must improve vehicle access and public transportation in an effort to reduce the amount of food deserts in the country.
+* In addition, the number of people in a census tract under the age of 18 was very important in our model. This suggest that companies may have a bias towards not building supermarkets in areas with a high amount of children as these may be seen as less profitable locations.
+
+## Next Steps 
+
+* Food swamps are areas where junk food stores and fast food restaurant outnumber supermarkets. It would be interesting to create a model that could predict food swamps and compare it to this food desert model.
 
 
 
-
-Sources: 
+### Sources: 
 
 https://health.usnews.com/health-news/health-wellness/articles/2014/05/28/america-tops-list-of-10-most-obese-countries
 
 https://endocrinenews.endocrine.org/u-s-leads-developed-nations-in-diabetes-prevalence/
+
+https://ottawamagazine.com/eating-and-drinking/live-where-basics-are-missing-how-about-access-to-fresh-affordable-food-if-so-you-may-live-in-a-food-desert-even-downtown/
+
+https://spoonuniversity.com/lifestyle/food-desert-obesity-rates
+
+https://www.bluezones.com/2017/11/news-food-swamps-contribute-obesity-food-deserts/#:~:text=A%20food%20swamp%20is%20an,access%20to%20affordable%2C%20nutritious%20food.
+
+https://today.uconn.edu/2017/11/food-swamps-predict-obesity-rates-better-food-deserts/
