@@ -34,7 +34,7 @@ After preliminary exploratory data analysis, there were hypotheses that needed t
 
 * Does having low access to a vehicle and living in an urban environment make it more likely to live in a food desert than living in an urban environment alone?
 
-	<img src="https://raw.githubusercontent.com/Sonora27/syriatel_churn_classification_analysis/master/pngs/Churn%20Rate%20by%20International%20Plan.png">
+	<img src="stuff">
 
 	* From my proportion test with a test statistic of 27.24 and a p-value of 2.28x10^-163, the null hypothesis that the proportions are equal for people with low vehicle access that live in an urban environment and people who live in an urban environment alone can be rejected. As a result, this engineered feature has been identified as important and will be kept for modeling.
 
