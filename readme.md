@@ -28,15 +28,15 @@ After preliminary exploratory data analysis, there were hypotheses that needed t
 
 * Does living in an urban environment make it more likely that a person lives in a food desert?
 
-	<img src="https://raw.githubusercontent.com/Sonora27/syriatel_churn_classification_analysis/master/pngs/Churn%20Rate%20by%20International%20Plan.png">
+	<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/Type%20of%20Census%20Tract.png">
 
-	* From my proportion test with a test statistic of 61.99 and a p-value of 0, the null hypothesis that the proportions are equal for people that live in an urban environment and people who live in a rural environment can be rejected. As a result, this has been identified as an important feature and will be kept for modeling.
+	* From the proportion test with a test statistic of 61.99 and a p-value of 0, the null hypothesis that the proportions are equal for people that live in an urban environment and people who live in a rural environment can be rejected. As a result, this has been identified as an important feature and will be kept for modeling.
 
 * Does having low access to a vehicle and living in an urban environment make it more likely to live in a food desert than living in an urban environment alone?
 
-	<img src="stuff">
+	<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/FDR%20by%20VA%20in%20Urban%20Environment.png">
 
-	* From my proportion test with a test statistic of 27.24 and a p-value of 2.28x10^-163, the null hypothesis that the proportions are equal for people with low vehicle access that live in an urban environment and people who live in an urban environment alone can be rejected. As a result, this engineered feature has been identified as important and will be kept for modeling.
+	* From the proportion test with a test statistic of 27.24 and a p-value of 2.28x10^-163, the null hypothesis that the proportions are equal for people with low vehicle access that live in an urban environment and people who live in an urban environment alone can be rejected. As a result, this engineered feature has been identified as important and will be kept for modeling.
 
 
 ## Modeling
@@ -45,24 +45,25 @@ For model evaluation, recall was used as the primary evaluation metric. This is 
 
 In addition, F1 was used as a secondary evaluation metric to achieve somewhat of a balance between false negatives and false positives. Although not the priority, the model should try not to cause the government to waste precious resources on areas that are not food deserts.
 
-To deal with class imbalance, TomekLinks was used. Undersampling was a good choice in this instance because I had enough data in both classes that I did not have to worry about data loss. In addition, SMOTE was not used to prevent overfitting.
+To deal with class imbalance, TomekLinks was used. Undersampling was a good choice in this instance because there was enough data in both classes and as a result, there was no fear of data loss.
 
 ### Decision Tree
 
-My highest-scoring of my Decision Tree models ended up with a recall score of .762.
+The Decision Tree model ended up with a recall score of .75 and an F1 score of .68.
 
 ### Random Forest
 
-My two best models ended up being Random Forest models. One had a recall score of .820 and the other had a recall score of .828.
+The Random Forest model ended up with a recall score of .77 and an F1 score of .70.
 
-### Voting Classifier
+### XG BOOST
 
-Using hard voting, my VotingClassifier ended up with a recall score of .754.
+For my XG Boost model, I used a combination sampling technique called SMOTEENN. This technique uses SMOTE to oversample the minority class, but then it uses a K Nearest Neighbots of 3 to undersample the majority class. This helps prevent the overfitting that usually accompanies the SMOTE technique.
 
-### XGBOOST
+Using XG BOOST with SMOTEENN, a recall of .79 was achieved as well as an F1 Score of .67. This was used as the final model for analysis.
 
-Using XGBOOST, I ended up with a recall score of .754.
+## Conclusions
 
+	<img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/FDR%20by%20VA%20in%20Urban%20Environment.png">
 
 
 
