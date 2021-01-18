@@ -9,7 +9,7 @@ Data Sources: Sources: [USDA,](https://www.ers.usda.gov/data-products/food-acces
 The United States of America leads the world in both obesity and diabetes rates. Many Americans struggle with these conditions as a result of not having access to healthy food.
 
 If the federal government had access to a model that could predict whether a census tract was likely to be a food desert or not based off of socioeconomic features, they could then provide assistance to areas that need it most.
-This would be an important model because the USDA only releases a list of food deserts every 5 years. However, the United States Census Bureau releases yearly census estimates. This new information could be used to update the model each year and identify areas likely to become food deserts that were not previously.
+This would be an important model because the USDA only releases a list of food deserts every 5 years. However, the United States Census Bureau releases yearly census estimates. This new information could be used to update the model each year and identify areas likely to become food deserts that had not been previously identified.
 
 ## Repository Structure
 * pngs -- folder that contains visualizations that were vital to my analysis
@@ -21,7 +21,7 @@ This would be an important model because the USDA only releases a list of food d
 
 ## Data
 
-For this project, data from the Economic Research Service of the USDA was utlized. This dataset has over 72,865 rows and 147 features. This was then combined with both demographical and educational attainment datasets from the United States Census Bureau. After performing preprocessing, statistical tests, and feature engineering, 51 features were used for modeling, including engineered features.
+For this project, data from the Economic Research Service of the USDA was utilized. This dataset has over 72,865 rows and 147 features. This was then combined with both demographical and educational attainment datasets from the United States Census Bureau. After performing preprocessing, statistical tests, and feature engineering, 51 features were used for modeling, including engineered features.
 
 ## Statistical Tests and Feature Engineering
 
@@ -46,7 +46,7 @@ For model evaluation, recall was used as the primary evaluation metric. This is 
 
 In addition, F1 was used as a secondary evaluation metric to achieve somewhat of a balance between false negatives and false positives. Although not the priority, the model should try not to cause the government to waste precious resources on areas that are not food deserts.
 
-To deal with class imbalance, TomekLinks was used. Undersampling was a good choice in this instance because there was enough data in both classes and as a result, there was no fear of data loss.
+To deal with class imbalance, the combination sampling technique SMOTEENN was used. 
 
 ### Decision Tree
 
@@ -68,7 +68,7 @@ Using XG BOOST with SMOTEENN, a recall of .79 was achieved as well as an F1 Scor
 
 <img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/feature_importance.png">
 
-* From this graph it can be see that the most important feature of the model was vehicle access. The United States federal government must improve vehicle access and public transportation in an effort to reduce the amount of food deserts in the country.
+* From this graph it can be seen that the most important feature of the model was vehicle access. The United States federal government must improve vehicle access and public transportation in an effort to reduce the amount of food deserts in the country.
 * In addition, the number of people in a census tract under the age of 18 was very important in our model. This suggest that companies may have a bias towards not building supermarkets in areas with a high amount of children as these may be seen as less profitable locations.
 
 ## Next Steps 
