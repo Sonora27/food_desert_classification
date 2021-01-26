@@ -1,6 +1,6 @@
 # Predicting Food Deserts
 
-Jose Ramirez
+Joe Ramirez
 
 Data Sources: Sources: [USDA,](https://www.ers.usda.gov/data-products/food-access-research-atlas/download-the-data/) [CENSUS](https://data.census.gov/cedsci/)
 
