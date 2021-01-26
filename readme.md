@@ -60,7 +60,7 @@ My Random Forest model ended up with a recall score of .77 and an F1 score of .7
 
 For the XG Boost model, a combination sampling technique called SMOTEENN was utilized. This technique uses SMOTE to oversample the minority class, but then it uses a K Nearest Neighbots of 3 to undersample the majority class. This helps prevent the overfitting that usually accompanies the SMOTE technique.
 
-Using XG BOOST with SMOTEENN, a recall of .79 was achieved as well as an F1 Score of .67. This was used as the final model for analysis.
+Using XG BOOST with SMOTEENN, a recall of .80 was achieved as well as an F1 Score of .67. This was used as the final model for analysis.
 
 <img src="https://raw.githubusercontent.com/Sonora27/food_desert_classification/master/pngs/XGB_SMOTEENN_CM.png">
 
