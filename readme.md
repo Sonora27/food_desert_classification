@@ -8,7 +8,8 @@ Data Sources: Sources: [USDA,](https://www.ers.usda.gov/data-products/food-acces
 
 The United States of America leads the world in both obesity and diabetes rates. Many Americans struggle with these conditions as a result of not having access to healthy food.
 
-If the federal government had access to a model that could predict whether a census tract was likely to be a food desert or not based off of socioeconomic features, they could then provide assistance to areas that need it most.
+If the federal government had access to a model that could predict whether a census tract was likely to be a food desert or not based off of socioeconomic features, they could then use the Healthy Food Financing Initiative program to provide assistance to areas that need it most.
+
 This would be an important model because the USDA only releases a list of food deserts every 5 years. However, the United States Census Bureau releases yearly census estimates. This new information could be used to update the model each year and identify areas likely to become food deserts that had not been previously identified.
 
 ## Repository Structure
